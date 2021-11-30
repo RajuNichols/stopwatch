@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rknvknmvctimerstopwatchfxmls21.RknvknMVCTimerStopwatchFXMLS21Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label alignment="CENTER" text="Timer Stopwatch" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" GridPane.rowSpan="2">
+         <image>
+            <Image url="@clockface.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="handImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" GridPane.rowSpan="2">
+         <image>
+            <Image url="@hand.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="digitalNumberText" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00.00" GridPane.rowIndex="3" />
+      <Text fx:id="timerNumberText" strokeType="OUTSIDE" strokeWidth="0.0" text="Timer: 00:00" GridPane.rowIndex="4" />
+      <Text fx:id="lapNumberText" strokeType="OUTSIDE" strokeWidth="0.0" text="Lap: 00:00.00" GridPane.rowIndex="5" />
+      <Text fx:id="averageLapNumberText" strokeType="OUTSIDE" strokeWidth="0.0" text="Average Lap Time: 00:00.00" GridPane.rowIndex="6" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
+         <children>
+            <Button fx:id="recordResetButton" mnemonicParsing="false" onAction="#handleRecordReset" text="Record" />
+            <Button fx:id="startStopButton" mnemonicParsing="false" onAction="#handleStartStop" text="Start" />
+         </children>
+      </HBox>
+      <LineChart fx:id="recordLapLineChart" title="Recorded Lap Time" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowSpan="4">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="xAxisRecordLap" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxisRecordLap" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <AreaChart fx:id="averageLapAreaChart" title="Average Lap Time" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" GridPane.rowSpan="4">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="xAxisAverageLap" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxisAverageLap" side="LEFT" />
+        </yAxis>
+      </AreaChart>
+   </children>
+</GridPane>
